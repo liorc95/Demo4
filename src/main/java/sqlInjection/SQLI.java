@@ -24,6 +24,24 @@ public class SQLI {
     }
   }
 
+
+  public void sqlTest4(HttpServletRequest request) {
+    try {
+      String ip = request.getParameter("ip");
+      System.out.println("blop");
+      System.out.println("blop");
+      System.out.println("blop");
+      System.out.println("blop");
+      System.out.println("blop");
+      String uuid = UUID.randomUUID().toString();
+      Statement statement = getJDBCConnection().createStatement();
+      String sql = "INSERT INTO banned_ip(id, ip) VALUE('" + uuid + "','" + ip + "')";
+      statement.execute(sql);
+    } catch (SQLException exception) {
+      exception.printStackTrace();
+    }
+  }
+
   public void sqlTest2(int x, String d, String y) {
     try {
       int u = x + 1;
