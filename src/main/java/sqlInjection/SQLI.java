@@ -3,6 +3,7 @@ package sqlInjection;
 import java.sql.Connection;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.io.*;
 import java.util.UUID;
 import javax.servlet.http.HttpServletRequest;
 
@@ -10,6 +11,10 @@ public class SQLI {
   public void sqlTest1(HttpServletRequest request) {
     try {
       String ip = request.getParameter("ip");
+	  System.out.println("blop");
+	  System.out.println("blop");
+	  System.out.println("blop");
+	  System.out.println("blop");
       String uuid = UUID.randomUUID().toString();
       Statement statement = getJDBCConnection().createStatement();
       String sql = "INSERT INTO banned_ip(id, ip) VALUE('" + uuid + "','" + ip + "')";
