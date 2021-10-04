@@ -24,7 +24,6 @@ public class SQLI {
     }
   }
 
-
   public void sqlTest4(HttpServletRequest request) {
     try {
       String ip = request.getParameter("ip");
