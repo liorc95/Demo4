@@ -10,6 +10,26 @@ public class SQLI {
   public void sqlTest1(HttpServletRequest request) {
     try {
       String ip = request.getParameter("ip");
+      String ip2 = request.getParameter("ip2");
+      System.out.println("blop");
+      System.out.println("blop");
+      System.out.println("blop");
+      System.out.println("blop");
+      System.out.println("blop");
+      String uuid = UUID.randomUUID().toString();
+      Statement statement = getJDBCConnection().createStatement();
+      String sql =
+          "INSERT INTO banned_ip(id, ip, ip2) VALUE('" + uuid + "','" + ip + "','" + ip2 + "')";
+      statement.execute(sql);
+    } catch (SQLException exception) {
+      exception.printStackTrace();
+    }
+  }
+
+  public void sqlTest4(HttpServletRequest request) {
+    try {
+      String ip = request.getParameter("ip");
+      System.out.println("blop");
       System.out.println("blop");
       System.out.println("blop");
       System.out.println("blop");
