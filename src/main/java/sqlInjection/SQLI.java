@@ -14,6 +14,7 @@ public class SQLI {
       System.out.println("blop");
       System.out.println("blop");
       System.out.println("blop");
+      System.out.println("blop");
       String uuid = UUID.randomUUID().toString();
       Statement statement = getJDBCConnection().createStatement();
       String sql = "INSERT INTO banned_ip(id, ip) VALUE('" + uuid + "','" + ip + "')";
